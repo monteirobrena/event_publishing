@@ -14,7 +14,7 @@ class GroupEvent < ActiveRecord::Base
   scope :archived,  -> (archived)  { where(archived:  archived) }
 
   def set_duration
-    (end_date - start_date).to_i
+    self.duration = (end_date - start_date).to_i
   end
 
   def set_start_date
